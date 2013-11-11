@@ -14,7 +14,7 @@ class DmozSpider(BaseSpider):
 
  def parse(self, response):
        hxs = HtmlXPathSelector(response)
-       sites = hxs.select('//ul/li/li')
+        sites = hxs.xpath("//div[@class='red12']").extract()
       # sites = hxs.select('//fieldset/ul/li')
        #
        items = []
